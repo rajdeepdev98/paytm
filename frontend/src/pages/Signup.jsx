@@ -6,6 +6,7 @@ import { Button } from "../components/Button";
 import { BottomWarning } from "../components/BottomWarning";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+// require("dotenv").config();
 
 export const Signup = () => {
   const [firstName, setFirstName] = useState("");
@@ -13,7 +14,7 @@ export const Signup = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [signUpState, setSignUpState] = useState(false);
-  const signUpUrl = "http://localhost:3000/api/v1/user/signup/";
+  const signUpUrl = `${process.env.BACKEND_URL}/user/signup/`;
   const navigate = useNavigate();
   return (
     <div className="bg-slate-300 h-screen flex justify-center">

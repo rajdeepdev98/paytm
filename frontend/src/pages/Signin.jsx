@@ -6,9 +6,10 @@ import { Button } from "../components/Button";
 import { BottomWarning } from "../components/BottomWarning";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+// require("dotenv").config();
 
 export const Signin = () => {
-  const signinUrl = "http://localhost:3000/api/v1/user/signin";
+  const signinUrl = `${process.env.BACKEND_URL}/user/signin`;
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [signInState, setSignInState] = useState(false);

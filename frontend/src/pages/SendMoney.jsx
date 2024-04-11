@@ -4,13 +4,14 @@ import { InputBox } from "../components/InputBox";
 import { useSearchParams, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { SubHeading } from "../components/SubHeading";
+// require("dotenv").config();
 
 export const SendMoney = () => {
   const [searchParams] = useSearchParams();
   const id = searchParams.get("id");
   const name = searchParams.get("name");
   const [amountToBeSent, setAmountToBeSent] = useState(0);
-  const transferUrl = "http://localhost:3000/api/v1/account/transfer";
+  const transferUrl = `${process.env.BACKEND_URL}/account/transfer`;
   const bearerToken = "Bearer " + localStorage.getItem("token");
   const [popUpState, setPopUpState] = useState(false);
   const navigate = useNavigate();
