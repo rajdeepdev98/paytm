@@ -2,8 +2,10 @@ const { Router } = require("express");
 const { z } = require("zod");
 const { User, Account } = require("../db");
 const jwt = require("jsonwebtoken");
-const { JWT_SECRET } = require("../config");
+
 const { authMiddleware } = require("./middleware");
+require("dotenv").config();
+const JWT_SECRET = process.env.JWT_SECRET;
 
 const router = Router();
 const signUpBody = z.object({

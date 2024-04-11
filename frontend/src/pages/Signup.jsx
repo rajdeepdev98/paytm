@@ -66,7 +66,7 @@ export const Signup = () => {
                 } catch (error) {
                   console.error("Error", error.response.data.message);
                   //   alert(error.response.data.message);
-                  setSignUpState(false);
+                  setSignUpState(true);
                 }
               }}
               label={"Sign Up"}
